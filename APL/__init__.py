@@ -10,25 +10,25 @@ except:
     os.system("pip install pylint")
     print("\n\nDone.")
 
-def getStdout(file: str) -> str:
+def getStdout(_file: str) -> str:
   """
   This is used to get the stdout of a file.
   
   E.g.:
   getStdout("main.py")
   """
-  return lint.py_run(file, return_std=True)[0]
+  return lint.py_run(_file, return_std=True)[0]
 
-def getErr(file: str) -> str:
+def getErr(_file: str) -> str:
   """
   This is to get the error in one file.
 
   E.g.:
   getErr("main.py")
   """
-  return lint.py_run(file, return_std=True)[1]
+  return lint.py_run(_file, return_std=True)[1]
   
-def getAll(arr) -> str:
+def getAll(_file: str):
   """
   This is for multiple files.
   It will return the output of the terminal command:
@@ -37,9 +37,4 @@ def getAll(arr) -> str:
   E.g.:
   getAll(["main.py", "test.py"])
   """
-  
-  m_str = " "
-  for i in arr:
-    m_str += i
-    m_str += " "
-  return os.popen("pylint -j " + len(arr) + m_str).read()
+  print(os.popen("pylint -j 1 " + _file).read())
