@@ -18,7 +18,7 @@ def getErr(_file: str) -> str:
   """
   return lint.py_run(_file, return_std=True)[1]
   
-def getAllFile(_file: str):
+def getFile(_file: str):
   """
   This is for multiple files.
   It will return the output of the terminal command:
@@ -41,4 +41,4 @@ def getAllDir(_dir: str = "."):
   for f in os.listdir(_dir):
     if f.endswith(".py"):
       print("Found", f)
-      getAllFile(f)
+      getFile(f"{_dir}/{f}")
