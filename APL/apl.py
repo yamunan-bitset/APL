@@ -1,4 +1,6 @@
+from pylint import epylint as lint
 import os
+
 
 def getStdout(_file: str) -> str:
   """
