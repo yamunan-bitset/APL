@@ -13,7 +13,7 @@ $ python3 install.py
 ```
 
 ## Examples
-There is a [test.py](test.py).
+There is a [test.py](test/test.py).
 Run this to test:
 ```
 $ python3
